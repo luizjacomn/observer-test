@@ -1,16 +1,17 @@
 package com.luizjacomn.observer.app;
 
-import com.luizjacomn.observer.api.observers.Assinante;
-import com.luizjacomn.observer.api.subjects.RevistaInformatica;
+import com.luizjacomn.observer.observers.Assinante;
+import com.luizjacomn.observer.subjects.RevistaAutomoveis;
 
 public class Main {
 
     public static void main(String[] args) {
-        //poderia receber a nova edicao atraves de um recurso externo
-        int novaEdicao = 3;
-        RevistaInformatica revistaInformatica = new RevistaInformatica();       
-        Assinante assinante = new Assinante(revistaInformatica);
-         
-        revistaInformatica.setNovaEdicao(novaEdicao);
+        RevistaAutomoveis revistaAutomoveis = new RevistaAutomoveis();
+        Assinante assinante = new Assinante("Lucas", revistaAutomoveis);
+        Assinante assinante2 = new Assinante("Rafa", revistaAutomoveis);
+        Assinante assinante3 = new Assinante("Carlos");
+        
+        revistaAutomoveis.publicarArtigo("Este é um novo artigo");
     }
+
 }
